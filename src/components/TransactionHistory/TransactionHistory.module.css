@@ -1,0 +1,27 @@
+.transactionHistory {
+  background: #fff;
+  color: #000;
+  border-collapse: collapse;
+  width: 500px;
+}
+
+tr {
+  line-height: 2;
+}
+
+td,
+th {
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+tr:nth-child(odd) {
+  background: #808080;
+}
+
+tr.header {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+}

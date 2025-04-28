@@ -1,3 +1,5 @@
+import css from './FriendListItem.module.css';
+
 export interface FriendListItemProps {
   avatar: string;
   name: string;
@@ -12,10 +14,12 @@ export const FriendListItem = ({
 }: FriendListItemProps) => {
   return (
     <>
-      <div>
+      <div className={css.container}>
         <img src={avatar} alt="Avatar" width="48" />
-        <p>{name}</p>
-        <p>{isOnline ? 'Online' : 'Offline'}</p>
+        <p className={css.name}>{name}</p>
+        <p className={isOnline ? css.status_online : css.status_offline}>
+          {isOnline ? 'Online' : 'Offline'}
+        </p>
       </div>
     </>
   );

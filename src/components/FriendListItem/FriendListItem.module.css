@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #fff;
+  color: #1a1a1a;
+  width: 100px;
+  height: 100%;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 21px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.status_online {
+  color: green;
+}
+
+.status_offline {
+  color: red;
+}

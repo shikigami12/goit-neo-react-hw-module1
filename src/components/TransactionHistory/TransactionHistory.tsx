@@ -1,3 +1,5 @@
+import css from './TransactionHistory.module.css';
+
 interface TransactionHistoryProps {
   type: string;
   amount: string;
@@ -6,17 +8,18 @@ interface TransactionHistoryProps {
 }
 
 interface TransactionsHistoriesProps {
-  transactions: TransactionHistoryProps[];
+  items: TransactionHistoryProps[];
 }
 
-export const TransactionHistory = ({
-  transactions,
-}: TransactionsHistoriesProps) => {
+export const TransactionHistory = ({ items }: TransactionsHistoriesProps) => {
+  const capitalizeFirstLetter = (string: string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
   return (
     <>
-      <table>
+      <table className={css.transactionHistory}>
         <thead>
-          <tr>
+          <tr className={css.header}>
             <th>Type</th>
             <th>Amount</th>
             <th>Currency</th>
@@ -24,9 +27,9 @@ export const TransactionHistory = ({
         </thead>
 
         <tbody>
-          {transactions.map(transaction => (
+          {items.map(transaction => (
             <tr key={transaction.id}>
-              <td>{transaction.type}</td>
+              <td>{capitalizeFirstLetter(transaction.type)}</td>
               <td>{transaction.amount}</td>
               <td>{transaction.currency}</td>
             </tr>

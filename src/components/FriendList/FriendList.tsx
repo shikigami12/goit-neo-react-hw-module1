@@ -2,6 +2,7 @@ import {
   FriendListItem,
   FriendListItemProps,
 } from '../FriendListItem/FriendListItem.tsx';
+import css from './FriendList.module.css';
 
 interface FriendListProps {
   friends?: FriendListItemProps[];
@@ -10,9 +11,9 @@ interface FriendListProps {
 export const FriendList = ({ friends }: FriendListProps) => {
   return (
     <>
-      <ul>
+      <ul className={css.container}>
         {friends?.map(friend => (
-          <li key={friend.id}>
+          <li key={friend.id} className={css.item}>
             <FriendListItem {...friend} />
           </li>
         ))}

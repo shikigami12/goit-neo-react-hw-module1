@@ -1,10 +1,12 @@
 import userData from './userData.json';
 import friendList from './friendList.json';
 import transactions from './transactions.json';
-import './App.css';
 import Profile from './components/Profile/Profile.tsx';
 import { FriendList } from './components/FriendList/FriendList.tsx';
 import { TransactionHistory } from './components/TransactionHistory/TransactionHistory.tsx';
+
+import 'modern-normalize/modern-normalize.css';
+import './App.css';
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
         stats={userData.stats}
       />
       <FriendList friends={friendList} />
-      <TransactionHistory transactions={transactions} />
+      <TransactionHistory items={transactions} />
     </>
   );
 }
