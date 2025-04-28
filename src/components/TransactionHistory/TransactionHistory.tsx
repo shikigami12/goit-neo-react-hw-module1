@@ -1,36 +1,38 @@
 interface TransactionHistoryProps {
-    type: string;
-    amount: string;
-    currency: string;
-    id: string;
+  type: string;
+  amount: string;
+  currency: string;
+  id: string;
 }
 
 interface TransactionsHistoriesProps {
-    transactions: TransactionHistoryProps[];
+  transactions: TransactionHistoryProps[];
 }
 
-export const TransactionHistory = ({transactions}: TransactionsHistoriesProps) => {
-    return (
-        <>
-            <table>
-                <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Currency</th>
-                </tr>
-                </thead>
+export const TransactionHistory = ({
+  transactions,
+}: TransactionsHistoriesProps) => {
+  return (
+    <>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Currency</th>
+          </tr>
+        </thead>
 
-                <tbody>
-                {transactions.map((transaction) => (
-                    <tr key={transaction.id}>
-                        <td>{transaction.type}</td>
-                        <td>{transaction.amount}</td>
-                        <td>{transaction.currency}</td>
-                    </tr>
-                ))}
-                </tbody>
-            </table>
-        </>
-    );
+        <tbody>
+          {transactions.map(transaction => (
+            <tr key={transaction.id}>
+              <td>{transaction.type}</td>
+              <td>{transaction.amount}</td>
+              <td>{transaction.currency}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  );
 };
